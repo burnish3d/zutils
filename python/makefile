@@ -14,7 +14,7 @@ venv/bin/activate: requirements_dev.txt
 	./venv/bin/python3 -m pip install -r requirements_dev.txt
 
 build: clean setup.py
-	python3 -m setup.py sdist bdist_wheel
+	python3 -m setup sdist bdist_wheel
 
 token_location = over_ride_this_value_manually
 token = `cat $(token_location)`
