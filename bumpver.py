@@ -1,5 +1,5 @@
 
-def bumpVersion(file_loc, which="patch", dry_run = False, all_matching_lines = False):
+def bumpVersion(file_loc, which="patch", dry_run = False, all_matching_lines = False, write_loc = None):
   if which not in ["major", "minor", "patch"]:
     print(f"Argument must be one of major, minor, or patch, instead was {which}")
     raise ValueError(which)
@@ -39,6 +39,6 @@ def bumpVersion(file_loc, which="patch", dry_run = False, all_matching_lines = F
   elif linesAltered > 1:
     print("More than one line has been altered, this is unexpected. Set 'all_matching_lines' to True if this is intended.")
   else:
-    with open(file_loc, 'w') as f:
+    with open(write_loc or file_loc, 'w') as f:
       f.writelines(lines)
         
