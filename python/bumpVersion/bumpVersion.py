@@ -1,4 +1,3 @@
-
 def bumpVersion(file_loc, which="patch", dry_run = False, all_matching_lines = False, write_loc = None):
   if which not in ["major", "minor", "patch"]:
     print(f"Argument must be one of major, minor, or patch, instead was {which}")
@@ -41,4 +40,3 @@ def bumpVersion(file_loc, which="patch", dry_run = False, all_matching_lines = F
   else:
     with open(write_loc or file_loc, 'w') as f:
       f.writelines(lines)
-        
